@@ -1,0 +1,50 @@
+﻿@model PassengerViewModel;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserPage</title>
+</head>
+<body>
+        <section class="vh-100" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('@Url.Content("~/assets/img/hero-bg2.png")');">
+            <div class="container h-100">he
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-lg-12 col-xl-11">
+                        <div class="form-box" style="border-radius: 25px;">
+                            <div class="card-body p-md-5">
+
+
+                                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color:white">Logged In</p>
+
+
+                                            
+
+                                        <div class="card-body p-md-5">
+
+                                            <a href="~/Passenger/CheckedIn" class="btn btn-light">Check In Route</a><br><br>                       
+                                                <form asp-action="Manage" method="post">
+                                                        <input name="password" type="password" value=@Model.password style="display:none" />
+                                                        <button name="username" value=@Model.username class="btn btn-danger">Manage Account</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                            <div>
+
+                                <div width="5px" height="auto" display="inline-block"></div>
+                            </div>
+
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+        </section>
+    </body>
+</html>

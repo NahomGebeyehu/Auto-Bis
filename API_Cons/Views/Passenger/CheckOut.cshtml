@@ -1,0 +1,67 @@
+﻿@model RouteViewModel
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html lang="en">
+
+<head>
+
+    <title>checkin</title>
+
+</head>
+<body>
+    
+
+    <section class="carousel-item active" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('@Url.Content("~/images/map4.jpg")');">
+        
+            <div class="row d-flex justify-content-center align-items-center h-100" style="margin-top:40px;">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Check Out</p>
+
+                                    <form asp-action="CheckOut" method="post" class="mx-1 mx-md-4">
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fa fa-map-marker fa-lg me-3 fa-fw "></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <div class="d-flex flex-row align-items-center mb-4">
+                                                    <div>
+                                                        <h5 style="color: white ;">Route info</h5>
+                                                        Route Id: <input class='input-field' name="route_id" value="@Model.route_id"/>
+                                                        Route Name: <input  class='input-field' value="@Model.route_name"/>
+                                                        Buses In Route: <input class='input-field' value="@Model.no_of_buses"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 ">
+
+                                            <button type="submit" class="btn btn-light   ">Check Out  </button>
+                                            <div width="5px" height="auto" display="inline-block"></div>
+
+
+
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                    <img src="~/images/map3.jpg"
+                                         class="img-fluid" alt="Sample image">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+</body>
+</html>

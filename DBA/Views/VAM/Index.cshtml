@@ -1,0 +1,62 @@
+﻿@model List<Route>
+@{
+    Layout = "~/Views/Shared/_Layout_Sys.cshtml";
+    
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style2.css" rel="stylesheet">
+    <link href="~/assets/css/VAM2.css" rel="stylesheet">
+
+</head>
+
+<body style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('@Url.Content("~/assets/img/hero-bg2.png")');">
+
+    <div class="table-container">
+        <h1 class="heading">Allocate Buses</h1>
+        <table class="table" style="border-radius:10px 3px">
+            <thead>
+                <tr>
+                    <th>Route ID</th>
+                    <th>Route Name</th>
+                    <th>No of buses in Route</th>
+                    <th>No of passengers</th>
+                    <th>No of buses to  Allocate</th>
+                    <th>Available Buses: @ViewBag.avail_Bus</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var rt in Model)
+                {
+
+                <tr>
+
+                    <form asp-action="Allocate" method="post">
+
+
+                    <td>@rt.route_id</td>
+                    <td>@rt.route_name</td>
+                    <td>@rt.no_of_buses</td>
+                    <td>@rt.no_of_passengers</td>
+
+
+                    <td><input type='number' class='input-field' name="no_of_buses" placeholder="Needed Buses: @((@rt.no_of_passengers / 10)+1-@rt.no_of_buses)" required></td>
+                    <td><button class="btn" style="background-color:#5c9f24" name="route_id" value="@rt.route_id">Allocate</button></td>
+                   
+                    </form>
+                </tr>
+
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+
+</body>
+</html>

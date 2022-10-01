@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PassengerViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div style="background-image: url('@Url.Content("~/assets/img/hero-bg.png")');">
+        <section id="hero" class="d-flex flex-column justify-content-center align-items-center ">
+            <div class="container text-center text-md-left" data-aos="fade-up">
+                <div id='login-form' class='login-page'>
+                    <div class="form-box">
+                        <div class='button-box'>
+                            <div id='btn'  style="background-color:#5c9F24"></div>
+                            <button type='button' onclick='login()' class='toggle-btn' color="white">Log In</button>
+                            <button type='button' onclick='register()' class='toggle-btn' color="white">Register</button>
+                        </div>
+                        <form asp-action="Index" id='login' method="post" class='input-group-login'>
+                            <input type='text' class='input-field' name="username" placeholder='Enter Username' required>
+                            <input type='password' class='input-field' name="password" placeholder='Enter Password' required>
+                            <div style="padding:20px">
+                            <button type='submit' class='submit-btn'  style="background-color:#5c9F24">Log in</button>
+                                </div>
+                        </form>
+                        <form asp-action="SignUp" id="register" class='input-group-register'>
+                            <input type='text' class='input-field' name="username" placeholder='Enter User Name' required>
+                            <input type='number' class='input-field' name="phone_no" placeholder='Enter phone no' required>
+                            <input type='password' class='input-field' name="password" placeholder='Enter Password' required>
+                            <input type='password' class='input-field' name="ConfirmPassword" placeholder='Confirm Password' required><br><br><br>
+                            <span asp-validation-for="ConfirmPassword"></span>
+                            <!-- <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>  -->
+                            <!-- <a href="login.html" class="btn-get-started scrollto">Get Started</a><br/><br /> -->
+                            <button type='submit' class='submit-btn'  style="background-color:#5c9F24">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+    </script>
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

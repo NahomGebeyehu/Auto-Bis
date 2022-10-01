@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PassengerViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div style="background-image: url('@Url.Content("~/assets/img/hero-bg.png")');">
+        <section id="hero" class="d-flex flex-column justify-content-center align-items-center ">
+            <div class="container text-center text-md-left" data-aos="fade-up">
+                <div id='login-form' class='login-page'>
+                    <div class="form-box">
+                        <div class='button-box'>
+                            <div id='btn' style="background-color:red"></div>
+                            <button type='button' onclick='login()' class='toggle-btn' color="white">Delete</button>
+                            <button type='button' onclick='register()' class='toggle-btn' color="white">Update</button>
+                        </div>
+                        <form asp-action="Delete" id='login' method="post" class='input-group-login'>
+                            <label class="label" style="color:white">Are You Sure You Want To Delete Your Account?</label>
+                            <div style="margin:auto; padding:20px">
+                                <button type='submit' value=@Model.username name="username" class='submit-btn' style="background-color:red">Yes</button><br><br><br>
+                                <a type='submit' href="~/Passenger/Index" class='submit-btn' style="background-color: #5c9F24">Cancel</a>
+                            </div>
+                        </form>
+                        <form asp-action="Update" id="register" class='input-group-register'>
+                            <input type='text' class='input-field' value=@Model.username name="username" placeholder='Enter User Name' required>
+                            <input type='number' class='input-field' value=@Model.phone_no name="phone_no" placeholder='Enter phone no' required>
+                            <input type='password' class='input-field' value=@Model.password name="password" placeholder='Enter Password' required>
+                            <input type='password' class='input-field' value=@Model.password name="ConfirmPassword" placeholder='Confirm Password' required><br><br><br>
+                            <span asp-validation-for="ConfirmPassword"></span>
+                            <!-- <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>  -->
+                            <!-- <a href="login.html" class="btn-get-started scrollto">Get Started</a><br/><br /> -->
+                            <button type='submit' class='submit-btn' style="background-color:coral">Update</button><br><br><br>
+                            <a type='submit' href="~/Passenger/Index" class='submit-btn' style="background-color: #5c9F24">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+    </script>
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

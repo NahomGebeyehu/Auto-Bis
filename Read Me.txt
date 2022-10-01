@@ -1,0 +1,2 @@
+This Solution has two projects inside. One called DBA and another one called API_Cons(this one uses API calls to DBA to perform actions from the passengers end).
+The database end is handled by DBA, which because it uses Identity for login, validation and role, needs two separate migration for the database Context class(located in Models) and Identity Context class which is located in "DBA\Areas\Identity\Data". Finally Our project uses fonts and jquery that are hosted on content delivery networks so it needs internet connection while its running.
