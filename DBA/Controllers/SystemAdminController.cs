@@ -15,12 +15,7 @@ namespace DBA.Controllers
         {
             _context = context;
         }
-        [Authorize(Roles = "Admin")]
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        
         [Authorize(Roles = "Admin")]
         public IActionResult bus_page()
         {
