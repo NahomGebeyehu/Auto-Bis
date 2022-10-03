@@ -28,11 +28,7 @@ namespace DBA
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString(
            "DefulatConnection")));
-            //services.AddScoped<IProductService, ProductService>();
             services.AddControllersWithViews();
-            /*services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<DBA.Data.DBAContext>();*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
