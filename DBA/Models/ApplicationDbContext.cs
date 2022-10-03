@@ -17,6 +17,5 @@ namespace DBA.Models
             public DbSet<Bus> Buses { get; set;}
             public DbSet<Passenger> Passengers { get; set; }
             public DbSet<Route> Routes { get; set; }
-            public DbSet<VAM> VAMs { get; set; }
     }
     }
