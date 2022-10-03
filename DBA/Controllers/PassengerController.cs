@@ -50,27 +50,5 @@ namespace DBA.Controllers
             _context.SaveChanges();
             return Ok(p);
         }
-
-
-        /*[HttpPost]
-        public IActionResult AddRoute(Route r)
-        {
-            var route = _context.Routes.Where(temp => temp.route_id == r.route_id).FirstOrDefault();
-            route.no_of_passengers++;
-            var route_id = route.route_id;
-            _context.Routes.Update(route);
-            _context.SaveChanges();
-            return Ok(route_id);
-        }
-        [HttpPost]
-        public IActionResult CheckOut(Route r)
-        {
-            var route = _context.Routes.Find(r.route_id);
-            route.no_of_passengers--;
-            _context.Routes.Update(route);
-            _context.SaveChanges();
-            return Ok();
-        }*/
-
     }
 }
