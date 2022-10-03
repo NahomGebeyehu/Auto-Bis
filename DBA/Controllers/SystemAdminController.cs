@@ -16,24 +16,6 @@ namespace DBA.Controllers
             _context = context;
         }
         [Authorize(Roles = "Admin")]
-        public IActionResult SignIn()
-        {
-            return View("SignIn");
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpPost]
-        public IActionResult SignIn(string username, string password)
-        {
-            if (username == "XJ555" && password == "444+333")
-            {
-                return RedirectToAction("Index");
-            }
-            else
-                return RedirectToAction("SignIn");
-        }
-
-        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             return View();
