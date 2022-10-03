@@ -21,7 +21,6 @@ namespace DBA.Controllers
         {
 
             var bt = _context.Buses.ToList();
-            ViewBag.total_Bus = bt.Count();
             return View(bt);
         }
 
