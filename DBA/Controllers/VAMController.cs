@@ -21,19 +21,6 @@ namespace DBA.Controllers
             return View();
         }
         [Authorize(Roles = "VAM")]
-        [HttpPost]
-        public IActionResult SignIn(VAM V)
-        {
-            var rw = _context.VAMs.Where(temp => temp.vam_id ==V.vam_id  && temp.password == V.password).FirstOrDefault();
-            if (rw != null)
-                return RedirectToAction("Index");
-            else
-            {
-
-                return RedirectToAction("SignIn");
-            }
-        }
-        [Authorize(Roles = "VAM")]
         public IActionResult Index()
         {
             
