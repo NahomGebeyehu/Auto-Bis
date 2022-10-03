@@ -26,12 +26,6 @@ namespace DBA.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public IActionResult AddBus()
-        {
-            return View();
-        }
-
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult AddBus(Bus b)
         {
