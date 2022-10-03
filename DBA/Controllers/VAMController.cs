@@ -93,11 +93,6 @@ namespace DBA.Controllers
             var bs= _context.Buses.Where(temp => temp.is_active == false);
             return bs.Count();
         }
-
-        public int recommendedDeallocate(int bus_no,int passenger_no)
-        {
-            return (bus_no-(passenger_no/10));
-        }
     }
 }
 
