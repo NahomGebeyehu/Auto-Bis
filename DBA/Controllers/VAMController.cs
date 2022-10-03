@@ -16,11 +16,6 @@ namespace DBA.Controllers
             _context = context;
         }
         [Authorize(Roles = "VAM")]
-        public IActionResult SignIn()
-        {
-            return View();
-        }
-        [Authorize(Roles = "VAM")]
         public IActionResult Index()
         {
             
